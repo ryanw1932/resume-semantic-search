@@ -13,3 +13,17 @@ This project implements a full pipeline for semantic document retrieval:
 Designed to simulate real-world search systems used in recruiting, knowledge retrieval, and recommendation engines. Good for data privacy too. 
 
 It's currently set to my name, so change it if you want to use your resume.
+
+## How to Run
+1. Install dependencies:
+pip install -r requirements.txt
+
+2. Make sure Ollama is running:
+ollama run llama3
+
+3. Add your PDF resume:
+- Place it in the project folder
+- Update the file path in app.py if needed
+
+4. Run the app:
+python app.py
