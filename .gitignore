@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env
+
+# Chroma database (important for your project)
+chroma_db/
+
+# OS files
+.DS_Store
