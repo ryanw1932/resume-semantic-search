@@ -3,11 +3,12 @@ Semantic search engine for PDF resumes using LangChain, ChromaDB, and local LLMs
 
 This project implements a full pipeline for semantic document retrieval:
 
-Parses PDF resumes
-Converts text into vector embeddings
-Stores embeddings in a vector database (ChromaDB)
-Performs similarity search based on user queries
-Uses local LLM inference (Ollama / Llama 3) to avoid external APIs
+## Pipeline
+- Parses PDF resumes  
+- Converts text into vector embeddings  
+- Stores embeddings in ChromaDB  
+- Performs semantic similarity search  
+- Uses local LLM inference (Ollama / Llama 3)  
 
 Designed to simulate real-world search systems used in recruiting, knowledge retrieval, and recommendation engines. Good for data privacy too. 
 
