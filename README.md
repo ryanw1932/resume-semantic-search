@@ -9,4 +9,6 @@ Stores embeddings in a vector database (ChromaDB)
 Performs similarity search based on user queries
 Uses local LLM inference (Ollama / Llama 3) to avoid external APIs
 
-Designed to simulate real-world search systems used in recruiting, knowledge retrieval, and recommendation engines.
+Designed to simulate real-world search systems used in recruiting, knowledge retrieval, and recommendation engines. Good for data privacy too. 
+
+It's currently set to my name, so change it if you want to use your resume.
