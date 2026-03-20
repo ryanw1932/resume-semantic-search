@@ -10,6 +10,3 @@ Performs similarity search based on user queries
 Uses local LLM inference (Ollama / Llama 3) to avoid external APIs
 
 Designed to simulate real-world search systems used in recruiting, knowledge retrieval, and recommendation engines.
-## Setup
-pip install -r requirements.txt
-python main.py
