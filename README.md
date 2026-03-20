@@ -12,7 +12,7 @@ This project implements a full pipeline for semantic document retrieval:
 
 Designed to simulate real-world search systems used in recruiting, knowledge retrieval, and recommendation engines. Good for data privacy too. 
 
-It's currently set to my name, so change it if you want to use your resume.
+Note: Update the PDF input file to use your own resume.
 
 ## How to Run
 1. Install dependencies:
