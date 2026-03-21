@@ -1,8 +1,8 @@
-# resume-semantic-search
-Semantic search engine for PDF resumes using LangChain, ChromaDB, and local LLMs (Ollama)
+## resume-semantic-search
+Semantic search engine for PDF resumes using LangChain, ChromaDB, and local LLMs (Ollama). Basically a resume summarizer :)
+
 
 This project implements a full pipeline for semantic document retrieval:
-
 ## Pipeline
 - Parses PDF resumes  
 - Converts text into vector embeddings  
