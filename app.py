@@ -16,8 +16,8 @@ def build_vector_store(pdf_path: str, db_dir: str) -> Chroma:
     documents = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=800,
-        chunk_overlap=100
+        chunk_size=1000,
+        chunk_overlap=200
     )
     chunks = text_splitter.split_documents(documents)
 
@@ -35,8 +35,10 @@ def answer_questions(db: Chroma) -> None:
     llm = ChatOllama(model="llama3")
 
     template = """
-Answer the question based ONLY on the following context from Ryan's resume:
+Answer the question thoroughly based ONLY on the following context from the resume. 
+If there are multiple items (like multiple jobs or projects), list all of them that you can find in the text.
 
+Context:
 {context}
 
 Question: {question}
@@ -49,7 +51,7 @@ Question: {question}
         if query.lower() == "exit":
             break
 
-        docs = db.similarity_search(query, k=3)
+        docs = db.max_marginal_relevance_search(query, k=9, fetch_k=10)
         context = "\n".join([doc.page_content for doc in docs])
 
         response = chain.invoke({
@@ -66,7 +68,13 @@ def main() -> None:
         print(f"Error: could not find {PDF_PATH}")
         return
 
-    db = build_vector_store(PDF_PATH, DB_DIR)
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+    if os.path.exists(DB_DIR):
+        db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
+    else:
+        db = build_vector_store(PDF_PATH, DB_DIR)
+    
     answer_questions(db)
 
 
